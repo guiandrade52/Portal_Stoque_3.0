@@ -7,12 +7,14 @@ module.exports = {
   extends: [
     'react-app',
     'airbnb',
+    'prettier',
     'plugin:@typescript-eslint/recommended',
     'prettier/@typescript-eslint',
   ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
+    __DEV__: true,
   },
   parserOptions: {
     ecmaFeatures: {
@@ -21,18 +23,26 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['react', 'import', 'jsx-a11y'],
+  plugins: ['react', 'import', 'jsx-a11y', 'react-hooks', 'prettier'],
   rules: {
-    'linebreak-style': 0,
+    'prettier/prettier': 'error',
     'react/jsx-filename-extension': [
       'error',
-      {
-        extensions: ['.tsx'],
-      },
+      { extensions: ['.tsx', '.ts', '.js', 'jsx'] },
     ],
     'import/prefer-default-export': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
+    'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     '@typescript-eslint/explicit-member-accessibility': 'off',
+    'react/jsx-one-expression-per-line': 'off',
+    'global-require': 'off',
+    'no-param-reassign': 'off',
+    'react-native/no-raw-text': 'off',
+    'no-underscore-dangle': 'off',
+    camelcase: 'off',
+    'no-console': ['error', { allow: ['tron'] }],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
   },
   settings: {
     'import/parsers': {

@@ -8,13 +8,18 @@ import { loadRequest } from '~/store/ducks/repositories/actions';
 import RepositoryItem from '~/components/RepositoryItem';
 
 export default function Repositories() {
-  const repositories = useSelector((state:ApplicationState) => state.repositories.data);
+  const repositories = useSelector(
+    (state: ApplicationState) => state.repositories.data
+  );
 
   const dispatch = useDispatch();
 
   dispatch(loadRequest());
-
   return (
-    <ul>{repositories.map(rep => <RepositoryItem key={rep.id} repository={rep} />)}</ul>
+    <ul>
+      {repositories.map(rep => (
+        <RepositoryItem key={rep.id} repository={rep} />
+      ))}
+    </ul>
   );
 }
