@@ -14,19 +14,17 @@ import history from '~/services/history';
 
 import { store, persistor } from '~/store';
 
-import GlobalStyles from '~/styles/global';
-
 // Theme
 import theme from './theme';
+import '~/styles/global.css';
 
 const App = () => (
   <Provider store={store}>
+    <CssBaseline />
     <PersistGate loading={null} persistor={persistor}>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
         <Router history={history}>
           <Routes />
-          <GlobalStyles />
           <Toastr />
         </Router>
       </ThemeProvider>

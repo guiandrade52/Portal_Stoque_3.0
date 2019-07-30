@@ -20,30 +20,30 @@ export const links = [
   {
     icon: <LibraryAddIcon color="primary" />,
     title: 'Novo',
-    link: '/DashNewOptions',
+    link: '/new',
     subLink: [
       {
         icon: <PagesIcon color="primary" />,
         title: 'Tarefa',
-        link: '/dashNewOptions/task',
+        link: '/new/task',
       },
       {
         icon: <InsertDriveFileIcon color="primary" />,
         title: 'Formulário',
-        link: '/dashNewOptions/form',
+        link: '/new/form',
       },
     ],
   },
   {
     icon: <FormatListBulletedIcon color="primary" />,
     title: 'Listar Tarefas',
-    link: '/listTask',
+    link: '/list',
     subLink: [],
   },
   {
     icon: <SettingsIcon color="primary" />,
     title: 'Configurador',
-    link: '/configs',
+    link: '/config',
     subLink: [],
   },
 ];

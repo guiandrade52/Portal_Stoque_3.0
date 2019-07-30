@@ -4,9 +4,5 @@ import React from 'react';
 import { SubHeader } from '~/components';
 
 export default function Dashboard() {
-  return (
-    <div>
-      <SubHeader title="Dashboard" Links={[{ text: 'teste', to: '/' }]} />
-    </div>
-  );
+  return <SubHeader title="Listar tarefas" Links={[]} />;
 }
