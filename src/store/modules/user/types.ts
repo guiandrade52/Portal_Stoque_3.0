@@ -1,5 +1,3 @@
-import { Action } from 'redux';
-
 /**
  * Action types
  */
@@ -12,15 +10,11 @@ export enum ProfileTypes {
 /**
  * Data types
  */
-export interface Profile {
-  name: string;
-  avatar: string;
-}
 
 /**
  * State Type
  */
 export interface ProfileState {
-  readonly profile: Profile;
-  readonly loading: boolean;
+  readonly name: string;
+  readonly avatar: string;
 }

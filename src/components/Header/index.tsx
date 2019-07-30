@@ -1,15 +1,22 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+// Redux
+import { useDispatch } from 'react-redux';
+import { signOut } from '~/store/modules/auth/actions';
+
 // State application
-import { ApplicationState } from '~/store';
 
 import logo from '~/assets/icons/logo-purple.svg';
 import { Container, Content, Profile } from './styles';
 
 export default function Header() {
-  const profile = useSelector((state: ApplicationState) => state.profile);
+  // const profile = useSelector((state: ApplicationState) => state.profile);
+  const dispatch = useDispatch();
+
+  function handleSingUp() {
+    dispatch(signOut());
+  }
 
   return (
     <Container>
@@ -20,16 +27,16 @@ export default function Header() {
         </nav>
 
         <aside>
-          {/* <Profile>
+          <Profile>
             <div>
-              <strong>{profile.name}</strong>
+              <strong>Fagner</strong>
               <Link to="/profile">Meu perfil</Link>
             </div>
-            <img
-              src={profile.avatar || 'https://api.adorable.io/avatars/50/abott@adorable.png'}
-              alt="Diego Fernandes"
-            />
-          </Profile> */}
+            <img src="https://api.adorable.io/avatars/50/abott@adorable.png" alt="Fagner" />
+          </Profile>
+          <Link to="/" onClick={handleSingUp}>
+            Sair
+          </Link>
         </aside>
       </Content>
     </Container>

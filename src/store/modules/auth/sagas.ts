@@ -12,7 +12,7 @@ function getSignIn(action: any) {
     setTimeout(() => {
       if (action.payload.login.password === '123') resolve({ token: '123teste' });
       else reject({ token: '123teste', signed: true });
-    }, 2000);
+    }, 200);
   });
 }
 

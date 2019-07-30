@@ -1,4 +1,4 @@
-import { Reducer, Action } from 'redux';
+import { Reducer } from 'redux';
 import { AuthState, AuthTypes } from './types';
 
 const INITIAL_STATE: AuthState = {
@@ -6,11 +6,6 @@ const INITIAL_STATE: AuthState = {
   signed: false,
   loading: false,
 };
-
-interface ActionAuth extends Action {
-  payload: AuthState;
-  type: any;
-}
 
 const auth: Reducer<AuthState> = (state = INITIAL_STATE, action) => {
   switch (action.type) {

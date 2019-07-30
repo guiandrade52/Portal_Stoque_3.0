@@ -6,7 +6,7 @@ export default (reducers: Reducer, middlewares: any) => {
     process.env.NODE_ENV === 'development'
       ? compose(
           applyMiddleware(...middlewares),
-          console.tron.createEnhancer(),
+          // console.tron.createEnhancer(),
           composeWithDevTools()
         )
       : compose(applyMiddleware(...middlewares));
