@@ -1,6 +1,8 @@
-import styled from 'styled-components';
+import { createStyles, Theme } from '@material-ui/core/styles';
 
-export const Wrapper = styled.div`
-  height: 100%;
-  background: linear-gradient(-90deg, #7159c1, #ab59c1);
-`;
+export const styles = (theme: Theme) =>
+  createStyles({
+    root: {
+      display: 'flex',
+    },
+  });
