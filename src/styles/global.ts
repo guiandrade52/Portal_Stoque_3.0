@@ -1,58 +1,42 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
-export interface Theme {
-  theme: {
-    colors: {
-      background: string,
-      textColor: string,
-      cardBackground: string,
-      cardBorderColor: string,
-      modalBackground: string,
-      modalBorderColor: string,
-      linkColor: string,
-      linkVisitedColor: string,
-      buttonOutlineBackground: string,
-      InputBackground: string,
-      InputBorderColor: string,
-    },
-  };
-}
+import 'react-redux-toastr/lib/css/react-redux-toastr.min.css';
 
-export const Main = styled.main`
-  width: 100%;
-  max-width: 980px;
-  margin: 15px auto;
-  padding: 0 30px;
-`;
+export default createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
-const GlobalStyles = createGlobalStyle`
-  body {
-    font-family: "Source Sans Pro", sans-serif;
-    color: ${({ theme }: Theme) => theme.colors.textColor};
-    font-size: 20px;
-  }
-  
-  button {
-    font-family: "Source Sans Pro";
-    font-weight: 600;
-    transition: background-color 400ms;
+  * {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
   }
 
-  button:hover {
-    cursor: pointer;
-  }
-
-  button:focus {
+  *:focus {
     outline: 0;
   }
 
-  a {
-    color: ${({ theme }: Theme) => theme.colors.linkColor};
+  html, body, #root {
+    height: 100%;
   }
 
-  a:visited {
-    color: ${({ theme }: Theme) => theme.colors.linkVisitedColor};
+  body {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body, input, button {
+    font: 14px 'Roboto', sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  button {
+    cursor: pointer;
   }
 `;
-
-export default GlobalStyles;

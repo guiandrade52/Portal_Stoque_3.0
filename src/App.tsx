@@ -1,22 +1,28 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { PersistGate } from 'redux-persist/integration/react';
+import { Router } from 'react-router-dom';
 
-import { Main } from '~/styles/global';
-import Header from '~/components/Header';
+import './config/ReactotronConfig';
+
+import { Toastr } from '~/components';
 
 import Routes from '~/routes';
+import history from '~/services/history';
 
-import store from '~/store';
+import { store, persistor } from '~/store';
+
+import GlobalStyles from '~/styles/global';
 
 const App = () => (
   <Provider store={store}>
-    <BrowserRouter>
-      <Header />
-      <Main>
+    <PersistGate loading={null} persistor={persistor}>
+      <Router history={history}>
         <Routes />
-      </Main>
-    </BrowserRouter>
+        <GlobalStyles />
+        <Toastr />
+      </Router>
+    </PersistGate>
   </Provider>
 );
 

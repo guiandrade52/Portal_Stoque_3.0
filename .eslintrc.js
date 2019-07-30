@@ -26,10 +26,7 @@ module.exports = {
   plugins: ['react', 'import', 'jsx-a11y', 'react-hooks', 'prettier'],
   rules: {
     'prettier/prettier': 'error',
-    'react/jsx-filename-extension': [
-      'error',
-      { extensions: ['.tsx', '.ts', '.js', 'jsx'] },
-    ],
+    'react/jsx-filename-extension': ['error', { extensions: ['.tsx', '.ts', '.js', 'jsx'] }],
     'import/prefer-default-export': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],

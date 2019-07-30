@@ -9,5 +9,5 @@ module.exports = override(
       rootPathPrefix: '~',
       rootPathSuffix: 'src',
     },
-  ]),
+  ])
 );
