@@ -4,6 +4,9 @@ const drawerWidth = 200;
 
 export const styles = (theme: Theme) =>
   createStyles({
+    accountButton: {
+      marginLeft: 'auto',
+    },
     appBar: {
       zIndex: theme.zIndex.drawer + 1,
       transition: theme.transitions.create(['width', 'margin'], {

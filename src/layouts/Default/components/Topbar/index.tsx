@@ -2,16 +2,20 @@ import React from 'react';
 import classnames from 'classnames';
 
 // Material components
-import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, Typography, Badge } from '@material-ui/core';
 
 // Material styles components
 import { WithStyles, withStyles } from '@material-ui/styles';
 
 // Material icons components
 import MenuIcon from '@material-ui/icons/Menu';
+import NotificationsIcon from '@material-ui/icons/Notifications';
 
 // Styles component
 import { styles } from './styles';
+
+// Custom components
+import { Account } from './components';
 
 interface OwnProps extends WithStyles<typeof styles> {
   isOpen: boolean;
@@ -22,7 +26,6 @@ interface OwnProps extends WithStyles<typeof styles> {
 function Topbar({ title, isOpen, classes, handleDrawerOpen }: OwnProps) {
   return (
     <AppBar
-      elevation={1}
       position="fixed"
       className={classnames(classes.appBar, {
         [classes.appBarShift]: isOpen,
@@ -41,8 +44,11 @@ function Topbar({ title, isOpen, classes, handleDrawerOpen }: OwnProps) {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap>
-          Portal Stoque
+          {title}
         </Typography>
+
+        {/* Account icon */}
+        <Account />
       </Toolbar>
     </AppBar>
   );
