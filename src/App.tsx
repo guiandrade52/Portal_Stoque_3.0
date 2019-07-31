@@ -16,11 +16,12 @@ import { store, persistor } from '~/store';
 
 // Theme
 import theme from './theme';
-import '~/styles/global.css';
+import GlobalStyle from '~/styles/global';
 
 const App = () => (
   <Provider store={store}>
     <CssBaseline />
+    <GlobalStyle />
     <PersistGate loading={null} persistor={persistor}>
       <ThemeProvider theme={theme}>
         <Router history={history}>
