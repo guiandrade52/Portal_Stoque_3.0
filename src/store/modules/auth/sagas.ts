@@ -17,7 +17,7 @@ export function* signIn(action: any) {
       qs.stringify({ ...action.payload.login, grant_type: 'password' })
     );
 
-    const { token } = response;
+    const { access_token: token } = response.data;
     api.defaults.headers.Authorization = `Bearer ${token}`;
 
     yield put(signInSuccess(token));
@@ -29,4 +29,11 @@ export function* signIn(action: any) {
   }
 }
 
-export default all([takeLatest(AuthTypes.SIGN_IN_REQUEST, signIn)]);
+export function signOut() {
+  history.push('/');
+}
+
+export default all([
+  takeLatest(AuthTypes.SIGN_IN_REQUEST, signIn),
+  takeLatest(AuthTypes.SIGN_OUT, signOut),
+]);
