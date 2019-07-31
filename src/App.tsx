@@ -3,7 +3,6 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Router } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
 
 // import './config/ReactotronConfig';
 
@@ -20,7 +19,6 @@ import GlobalStyle from '~/styles/global';
 
 const App = () => (
   <Provider store={store}>
-    <CssBaseline />
     <GlobalStyle />
     <PersistGate loading={null} persistor={persistor}>
       <ThemeProvider theme={theme}>

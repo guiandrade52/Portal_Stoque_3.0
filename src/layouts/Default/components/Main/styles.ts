@@ -4,8 +4,10 @@ export const styles = (theme: Theme) =>
   createStyles({
     content: {
       flexGrow: 1,
+      position: 'relative',
       padding: theme.spacing(1),
       background: '#eee',
+      height: 'auto',
     },
     toolbar: {
       display: 'flex',
