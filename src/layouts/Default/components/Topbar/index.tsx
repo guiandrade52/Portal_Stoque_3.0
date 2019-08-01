@@ -2,14 +2,13 @@ import React from 'react';
 import classnames from 'classnames';
 
 // Material components
-import { AppBar, Toolbar, IconButton, Typography, Badge } from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
 
 // Material styles components
 import { WithStyles, withStyles } from '@material-ui/styles';
 
 // Material icons components
 import MenuIcon from '@material-ui/icons/Menu';
-import NotificationsIcon from '@material-ui/icons/Notifications';
 
 // Styles component
 import { styles } from './styles';

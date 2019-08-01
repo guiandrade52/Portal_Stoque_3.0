@@ -12,8 +12,9 @@ export enum TasksTypes {
  */
 
 export interface Task {
-  executionId: number;
-  situacao: string;
+  tasks: [];
+  totalOcor: number;
+  totalPages: number;
 }
 
 /**

@@ -7,12 +7,11 @@ import { loadTasksSuccess, loadTasksFailure } from './actions';
 import { TasksTypes } from './types';
 
 export function* loadTasks(action: any) {
-  console.log(action);
   try {
     const response = yield call(api.get, 'api/task', {
       params: action.payload,
     });
-    yield put(loadTasksSuccess(response));
+    yield put(loadTasksSuccess(response.data));
   } catch (err) {
     yield put(loadTasksFailure());
     yield toastr.error('Ops...', 'Encontramos um erro ao tentar recuperar as ocorrências.');
