@@ -2,11 +2,10 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 // Material components
-import { Grid, Hidden, Grow, Paper, Typography } from '@material-ui/core';
+import { Grid, Hidden, Grow } from '@material-ui/core';
 
 // Material styles
 import { withStyles, WithStyles } from '@material-ui/core/styles';
-import { Mood as MoodIcon } from '@material-ui/icons';
 import { styles } from './styles';
 
 // Redux
@@ -17,11 +16,10 @@ import { ApplicationState } from '~/store';
 import { SubHeader, Progressbar } from '~/components';
 import { Search, Details, ListTask, Pagination } from './components';
 
-function List(props: WithStyles<typeof styles>) {
+function List({ classes }: WithStyles<typeof styles>) {
   const dispatch = useDispatch();
   const tasks = useSelector((state: ApplicationState) => state.tasks);
   const filter = useSelector((state: ApplicationState) => state.filter.data);
-  const { classes } = props;
 
   useEffect(() => {
     dispatch(loadTasksRequest(filter));
@@ -43,8 +41,6 @@ function List(props: WithStyles<typeof styles>) {
         </>
       );
     }
-
-    if (tasks.data.length === 0) return <div>Não existe tarefas</div>;
 
     return (
       <Grow in timeout={500}>

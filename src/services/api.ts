@@ -9,9 +9,10 @@ api.interceptors.response.use(
   response => response,
   error => {
     if (error.response.status === 401) {
-      toastr.confirm('Ops, sua sessão expirou', {
+      toastr.confirm('Olá, sua sessão expirou', {
         onOk: () => {
           localStorage.removeItem('persist:goStoque');
+          window.location.reload();
         },
       });
     }
