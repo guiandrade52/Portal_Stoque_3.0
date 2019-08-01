@@ -12,7 +12,41 @@ export enum TasksTypes {
  */
 
 export interface Task {
-  tasks: [];
+  Anexos: [];
+  Bairro: string;
+  Cep: string;
+  Cidade: string;
+  Cit: [];
+  Classificacao: string;
+  ClienteAt: string;
+  Complemento: string;
+  Contato: string;
+  DataCr: string;
+  DataTr: string;
+  DataTs: string;
+  Descricao: string;
+  Email: string;
+  Estado: string;
+  ExecutionId: number;
+  GrupoServico: string;
+  Logradouro: string;
+  Numero: string;
+  Origem: string;
+  Produto: string;
+  Rat: [];
+  Responsavel: string;
+  Serie: string;
+  Servico: string;
+  Situacao: string;
+  Solucao: string;
+  Telefone: string;
+  TipoOcorrencia: string;
+  UserPortal: string;
+  idSituacao: number;
+}
+
+export interface Data {
+  tasks: Task[];
   totalOcor: number;
   totalPages: number;
 }
@@ -21,7 +55,7 @@ export interface Task {
  * State Type
  */
 export interface TasksState {
-  readonly data: Task[];
+  readonly data: Data;
   readonly loading: boolean;
   readonly error: boolean;
 }

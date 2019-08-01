@@ -1,5 +1,6 @@
 import React from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
+import { useSelector } from 'react-redux';
 
 // Material components
 import { Paper } from '@material-ui/core';
@@ -8,18 +9,22 @@ import { Paper } from '@material-ui/core';
 import { WithStyles, withStyles } from '@material-ui/core/styles';
 import { styles } from './styles';
 
+// Redux
+import { ApplicationState } from '~/store';
+
 // Custom components
 import { TaskItem } from './components';
 
 function ListTask(props: WithStyles<typeof styles>) {
+  const tasks = useSelector((state: ApplicationState) => state.tasks.data.tasks);
   const { classes } = props;
 
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
         <PerfectScrollbar className={classes.container}>
-          {[...Array(10)].map(item => (
-            <TaskItem key={Math.random()} />
+          {tasks.map(task => (
+            <TaskItem task={task} key={task.ExecutionId} />
           ))}
         </PerfectScrollbar>
       </Paper>

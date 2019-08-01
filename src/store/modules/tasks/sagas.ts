@@ -11,7 +11,8 @@ export function* loadTasks(action: any) {
     const response = yield call(api.get, 'api/task', {
       params: action.payload,
     });
-    yield put(loadTasksSuccess(response.data));
+    const { data } = response;
+    if (data) yield put(loadTasksSuccess(data));
   } catch (err) {
     yield put(loadTasksFailure());
     yield toastr.error('Ops...', 'Encontramos um erro ao tentar recuperar as ocorrências.');

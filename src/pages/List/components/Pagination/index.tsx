@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 // Material components
 import { Typography, IconButton, Grid } from '@material-ui/core';
@@ -13,19 +14,26 @@ import {
 import { withStyles, WithStyles } from '@material-ui/core/styles';
 import { styles } from './styles';
 
+// Redux
+import { ApplicationState } from '~/store';
+
 function Pagination(props: WithStyles<typeof styles>) {
+  const totalPages = useSelector((state: ApplicationState) => state.tasks.data.totalPages);
   const { classes } = props;
-  const totalPage = 30;
   const [page, setPage] = useState(1);
 
   function handleNextPage() {
-    if (page < 30) {
+    if (page === totalPages) {
+      setPage(1);
+    } else {
       setPage(page + 1);
     }
   }
 
   function handleBeforePage() {
-    if (page > 1) {
+    if (page === 1) {
+      setPage(totalPages);
+    } else {
       setPage(page - 1);
     }
   }
@@ -45,7 +53,7 @@ function Pagination(props: WithStyles<typeof styles>) {
 
         <Grid item>
           <Typography color="textSecondary" className={classes.pages}>
-            {`${page} de ${totalPage}`}
+            {`${page} de ${totalPages}`}
           </Typography>
         </Grid>
       </Grid>

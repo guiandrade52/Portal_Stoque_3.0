@@ -10,38 +10,61 @@ import { AttachFile as AttachFileIcon, Beenhere as BeenhereIcon } from '@materia
 import { WithStyles, withStyles } from '@material-ui/core/styles';
 import { styles } from './styles';
 
-function TaskItem(props: WithStyles<typeof styles>) {
-  const { classes } = props;
+import { Task } from '~/store/modules/tasks/types';
+import { statusSituacao } from '~/config/colorsStatus';
+
+interface OwnProps extends WithStyles<typeof styles> {
+  task: Task;
+}
+
+function TaskItem(props: OwnProps) {
+  const { classes, task } = props;
+
+  function handleStatusColor() {
+    const resp: any = statusSituacao.find(item => item.id === task.idSituacao && item.color);
+    return resp.color;
+  }
+
   return (
     <Card className={classes.root}>
       <CardActionArea className={classes.card}>
         <div>
           <Typography noWrap className={classes.empresa}>
-            <b>35065</b> - STOQUE SOLUÇÕES TECNOLOGICAS
+            <b>{task.ExecutionId}</b> - {task.ClienteAt}
           </Typography>
           <Typography noWrap className={classes.produto}>
-            Ábaris
+            {task.Produto}
           </Typography>
           <Typography noWrap className={classes.serie}>
-            SÉRIE ASDF234RF23R2F23R
+            {task.Serie}
           </Typography>
           <Typography noWrap className={classes.servico}>
-            OCO - DESINSTALAÇÃO
+            {task.Servico}
           </Typography>
           <Typography noWrap className={classes.data}>
-            22/07/2019 10:44
+            {task.DataCr}
+
             <span className={classes.rootIcons}>
-              <Tooltip title="Rat" placement="top">
-                <BeenhereIcon fontSize="inherit" className={classes.rat} />
-              </Tooltip>
-              <Tooltip title="Cit" placement="top">
-                <BeenhereIcon fontSize="inherit" className={classes.cit} />
-              </Tooltip>
-              <Tooltip title="Anexo" placement="top">
-                <AttachFileIcon fontSize="inherit" className={classes.anexo} />
-              </Tooltip>
-              <Tooltip title="Status da tarefa" placement="top">
-                <span className={classes.status} />
+              {task.Rat && task.Rat.length > 0 && (
+                <Tooltip title="Rat" placement="top">
+                  <BeenhereIcon fontSize="inherit" className={classes.rat} />
+                </Tooltip>
+              )}
+
+              {task.Cit && task.Cit.length > 0 && (
+                <Tooltip title="Cit" placement="top">
+                  <BeenhereIcon fontSize="inherit" className={classes.cit} />
+                </Tooltip>
+              )}
+
+              {task.Anexos && task.Anexos.length > 0 && (
+                <Tooltip title="Anexo" placement="top">
+                  <AttachFileIcon fontSize="inherit" className={classes.anexo} />
+                </Tooltip>
+              )}
+
+              <Tooltip title={task.Situacao} placement="top">
+                <span className={classes.status} style={{ background: handleStatusColor() }} />
               </Tooltip>
             </span>
           </Typography>

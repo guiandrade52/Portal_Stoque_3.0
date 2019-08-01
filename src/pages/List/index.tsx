@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -16,7 +17,8 @@ import { ApplicationState } from '~/store';
 import { SubHeader, Progressbar } from '~/components';
 import { Search, Details, ListTask, Pagination } from './components';
 
-function List({ classes }: WithStyles<typeof styles>) {
+function List(props: WithStyles<typeof styles>) {
+  const { classes } = props;
   const dispatch = useDispatch();
   const tasks = useSelector((state: ApplicationState) => state.tasks);
   const filter = useSelector((state: ApplicationState) => state.filter.data);
@@ -41,7 +43,6 @@ function List({ classes }: WithStyles<typeof styles>) {
         </>
       );
     }
-
     return (
       <Grow in timeout={500}>
         <Grid container className={classes.root}>

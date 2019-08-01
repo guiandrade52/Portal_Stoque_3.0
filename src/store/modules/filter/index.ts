@@ -1,5 +1,6 @@
 import { Reducer } from 'redux';
 import produce from 'immer';
+
 import { FilterTypes, FilterState } from './types';
 
 const INITIAL_STATE: FilterState = {

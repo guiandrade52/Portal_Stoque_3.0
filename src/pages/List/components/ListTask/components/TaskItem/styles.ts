@@ -30,7 +30,6 @@ export const styles = (theme: Theme) =>
     },
     status: {
       padding: 7,
-      background: '#999',
       borderRadius: 100,
       float: 'right',
     },
