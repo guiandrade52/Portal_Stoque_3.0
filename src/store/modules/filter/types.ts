@@ -2,7 +2,7 @@
  * Action types
  */
 export enum FilterTypes {
-  CHANGE_FILTER = '@filter/CHANGE_FILTER',
+  UPDATE_FILTER = '@filter/UPDATE_FILTER',
 }
 
 /**

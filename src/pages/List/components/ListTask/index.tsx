@@ -13,21 +13,40 @@ import { styles } from './styles';
 import { ApplicationState } from '~/store';
 
 // Custom components
-import { TaskItem } from './components';
+import { TaskItem, NoTask } from './components';
+import { Progressbar } from '~/components';
 
 function ListTask(props: WithStyles<typeof styles>) {
-  const tasks = useSelector((state: ApplicationState) => state.tasks.data.tasks);
+  const tasks = useSelector((state: ApplicationState) => state.tasks);
   const { classes } = props;
 
-  return (
-    <div className={classes.root}>
-      <Paper className={classes.paper}>
+  function RenderList() {
+    if (tasks.loading) {
+      return (
+        <div className={classes.loading}>
+          <Progressbar size={80} />
+        </div>
+      );
+    }
+
+    if (tasks.data.tasks.length === 0) {
+      return <NoTask />;
+    }
+
+    if (!tasks.loading) {
+      return (
         <PerfectScrollbar className={classes.container}>
-          {tasks.map(task => (
+          {tasks.data.tasks.map(task => (
             <TaskItem task={task} key={task.ExecutionId} />
           ))}
         </PerfectScrollbar>
-      </Paper>
+      );
+    }
+  }
+
+  return (
+    <div className={classes.root}>
+      <Paper className={classes.paper}>{RenderList()}</Paper>
     </div>
   );
 }

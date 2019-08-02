@@ -1,5 +1,5 @@
 export const statusSituacao = [
-  { id: 1, label: 'Aguardando Classificação', color: '#ff9933' },
+  { id: 1, label: 'Aguardando Classificação', color: 'rgba(222, 98, 8, 0.76)' },
   { id: 2, label: 'Em Andamento', color: '#ffff00' },
   { id: 3, label: 'Aguardando Cliente', color: '#3333cc' },
   { id: 4, label: 'Aguardando Terceiros', color: '#7070db' },

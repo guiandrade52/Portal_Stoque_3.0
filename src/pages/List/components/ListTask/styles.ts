@@ -9,4 +9,7 @@ export const styles = (theme: Theme) =>
     container: {
       padding: theme.spacing(1),
     },
+    loading: {
+      paddingTop: '40%',
+    },
   });

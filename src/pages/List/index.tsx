@@ -14,7 +14,7 @@ import { loadTasksRequest } from '~/store/modules/tasks/actions';
 import { ApplicationState } from '~/store';
 
 // Custom components
-import { SubHeader, Progressbar } from '~/components';
+import { SubHeader } from '~/components';
 import { Search, Details, ListTask, Pagination } from './components';
 
 function List(props: WithStyles<typeof styles>) {
@@ -36,13 +36,6 @@ function List(props: WithStyles<typeof styles>) {
       );
     }
 
-    if (tasks.loading) {
-      return (
-        <>
-          <Progressbar size={80} />
-        </>
-      );
-    }
     return (
       <Grow in timeout={500}>
         <Grid container className={classes.root}>

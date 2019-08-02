@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 // Material components
 import { Typography, IconButton, Grid } from '@material-ui/core';
@@ -16,26 +16,32 @@ import { styles } from './styles';
 
 // Redux
 import { ApplicationState } from '~/store';
+import { updateFilter } from '~/store/modules/filter/actions';
 
 function Pagination(props: WithStyles<typeof styles>) {
   const totalPages = useSelector((state: ApplicationState) => state.tasks.data.totalPages);
+  const filter = useSelector((state: ApplicationState) => state.filter.data);
   const { classes } = props;
-  const [page, setPage] = useState(1);
+  const dispatch = useDispatch();
 
   function handleNextPage() {
-    if (page === totalPages) {
-      setPage(1);
+    if (filter.activePage === totalPages) {
+      filter.activePage = 1;
     } else {
-      setPage(page + 1);
+      filter.activePage += 1;
     }
+
+    dispatch(updateFilter(filter));
   }
 
   function handleBeforePage() {
-    if (page === 1) {
-      setPage(totalPages);
+    if (filter.activePage === 1) {
+      filter.activePage = totalPages;
     } else {
-      setPage(page - 1);
+      filter.activePage -= 1;
     }
+
+    dispatch(updateFilter(filter));
   }
 
   return (
@@ -45,7 +51,6 @@ function Pagination(props: WithStyles<typeof styles>) {
           <IconButton size="small" onClick={handleBeforePage}>
             <NavigateBeforeIcon />
           </IconButton>
-
           <IconButton size="small" onClick={handleNextPage}>
             <NavigateNextIcon />
           </IconButton>
@@ -53,7 +58,7 @@ function Pagination(props: WithStyles<typeof styles>) {
 
         <Grid item>
           <Typography color="textSecondary" className={classes.pages}>
-            {`${page} de ${totalPages}`}
+            {`${filter.activePage} de ${totalPages}`}
           </Typography>
         </Grid>
       </Grid>

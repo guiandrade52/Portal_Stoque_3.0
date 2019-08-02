@@ -14,9 +14,8 @@ const INITIAL_STATE: FilterState = {
 const reducer: Reducer<FilterState> = (state = INITIAL_STATE, action) => {
   return produce(state, draft => {
     switch (action.type) {
-      case FilterTypes.CHANGE_FILTER:
-        draft.actived = true;
-        draft.data = action.payload.data;
+      case FilterTypes.UPDATE_FILTER:
+        draft.data = action.payload.filter;
         break;
 
       default:
