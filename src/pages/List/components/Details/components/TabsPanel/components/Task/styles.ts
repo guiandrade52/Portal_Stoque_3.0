@@ -5,4 +5,7 @@ export const styles = (theme: Theme) =>
     paper: {
       padding: theme.spacing(1),
     },
+    container: {
+      paddingTop: 10,
+    },
   });

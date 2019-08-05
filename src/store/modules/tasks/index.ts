@@ -11,6 +11,7 @@ const INITIAL_STATE: TasksState = {
   },
   error: false,
   loading: false,
+  selected: { idSituacao: 0 },
 };
 
 const reducer: Reducer<TasksState> = (state = INITIAL_STATE, action) => {
@@ -25,6 +26,9 @@ const reducer: Reducer<TasksState> = (state = INITIAL_STATE, action) => {
         break;
       case TasksTypes.LOAD_FAILURE:
         draft.error = true;
+        break;
+      case TasksTypes.SELECT_TASK:
+        draft.selected = action.payload.task;
         break;
       default:
         break;

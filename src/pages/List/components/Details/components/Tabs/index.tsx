@@ -23,10 +23,10 @@ function TabsComponet(props: OwnProps) {
         variant="scrollable"
         scrollButtons="auto"
       >
-        <Tab label="Tarefa" />
+        <Tab label="Resumo" />
         <Tab label="Endereço" />
         <Tab label="Classificação" />
-        <Tab label="Solicitante" />
+        <Tab label="Contato" />
       </Tabs>
     </Paper>
   );

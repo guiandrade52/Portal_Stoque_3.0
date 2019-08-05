@@ -5,9 +5,13 @@ export const styles = (theme: Theme) =>
     root: {
       marginTop: 8,
     },
+    selected: {
+      background: '#CCC',
+    },
     card: {
       padding: theme.spacing(1),
       color: theme.palette.text.secondary,
+      minHeight: 100,
     },
     empresa: {
       fontSize: 11,

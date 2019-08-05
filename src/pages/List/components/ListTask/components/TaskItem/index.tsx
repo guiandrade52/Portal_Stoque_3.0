@@ -1,4 +1,6 @@
 import React from 'react';
+import classnames from 'classnames';
+import { useDispatch, useSelector } from 'react-redux';
 
 // Material components
 import { Card, CardActionArea, Typography, Tooltip } from '@material-ui/core';
@@ -10,7 +12,12 @@ import { AttachFile as AttachFileIcon, Beenhere as BeenhereIcon } from '@materia
 import { WithStyles, withStyles } from '@material-ui/core/styles';
 import { styles } from './styles';
 
+// Redux
 import { Task } from '~/store/modules/tasks/types';
+import { selectTask } from '~/store/modules/tasks/actions';
+import { ApplicationState } from '~/store';
+
+// Utils
 import { statusSituacao } from '~/config/colorsStatus';
 
 interface OwnProps extends WithStyles<typeof styles> {
@@ -19,14 +26,27 @@ interface OwnProps extends WithStyles<typeof styles> {
 
 function TaskItem(props: OwnProps) {
   const { classes, task } = props;
+  const dispatch = useDispatch();
+  const taskSelected = useSelector((state: ApplicationState) =>
+    state.tasks.selected ? state.tasks.selected : { ExecutionId: 0 }
+  );
 
   function handleStatusColor() {
     const resp: any = statusSituacao.find(item => item.id === task.idSituacao && item.color);
     return resp.color;
   }
 
+  function handleClick() {
+    dispatch(selectTask(task));
+  }
+
   return (
-    <Card className={classes.root}>
+    <Card
+      className={classnames(classes.root, {
+        [classes.selected]: task.ExecutionId === taskSelected.ExecutionId,
+      })}
+      onClick={handleClick}
+    >
       <CardActionArea className={classes.card}>
         <div>
           <Typography noWrap className={classes.empresa}>
