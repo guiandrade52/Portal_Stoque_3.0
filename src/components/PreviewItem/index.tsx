@@ -18,10 +18,11 @@ interface Anexo {
 
 interface OwnProps extends WithStyles<typeof styles> {
   anexos?: Anexo[];
+  onclick?: () => void;
 }
 
 function PreviewItem(props: OwnProps) {
-  const { anexos, classes } = props;
+  const { anexos, classes, onclick } = props;
   const [loading, setLoading] = useState(true);
 
   function getImage(chave: string, tipo: string) {
@@ -37,7 +38,7 @@ function PreviewItem(props: OwnProps) {
         {anexos &&
           anexos.map(anexo => {
             return (
-              <Grid key={anexo.Chave} item className={classes.item}>
+              <Grid onClick={onclick} key={anexo.Chave} item className={classes.item}>
                 {loading && (
                   <div className={classes.loading}>
                     <Progressbar />

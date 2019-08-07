@@ -1,7 +1,5 @@
 import React from 'react';
-
-// Material components
-import {} from '@material-ui/core';
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
 // Material styles
 import { WithStyles, withStyles } from '@material-ui/core/styles';
@@ -18,10 +16,12 @@ function TabsPanel(props: OwnProps) {
   const { classes, value } = props;
   return (
     <div className={classes.root}>
-      {Boolean(value === 0) && <Resume />}
-      {Boolean(value === 1) && <Address />}
-      {Boolean(value === 2) && <Classification />}
-      {Boolean(value === 3) && <Requester />}
+      <PerfectScrollbar className={classes.container}>
+        {Boolean(value === 0) && <Resume />}
+        {Boolean(value === 1) && <Address />}
+        {Boolean(value === 2) && <Classification />}
+        {Boolean(value === 3) && <Requester />}
+      </PerfectScrollbar>
     </div>
   );
 }

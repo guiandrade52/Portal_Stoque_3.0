@@ -67,7 +67,7 @@ function Form(props: any) {
               <Field name="ClienteAt" component={Input} fullWidth label="Cliente" disabled />
             </Grid>
 
-            <PreviewItem anexos={itemSelected.Anexos} />
+            <PreviewItem onclick={() => console.log('cliquei')} anexos={itemSelected.Anexos} />
           </Grid>
         </form>
       </Paper>
