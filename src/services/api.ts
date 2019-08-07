@@ -1,8 +1,10 @@
 import axios from 'axios';
 import { toastr } from 'react-redux-toastr';
 
+export const HOST = 'http://localhost:64966';
+
 const api = axios.create({
-  baseURL: 'http://localhost:64966',
+  baseURL: HOST,
 });
 
 api.interceptors.response.use(

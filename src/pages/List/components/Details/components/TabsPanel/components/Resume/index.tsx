@@ -1,6 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import { MdAssignment } from 'react-icons/md';
+
 // Redux form
 import { Field, reduxForm } from 'redux-form';
 
@@ -9,6 +10,7 @@ import { Fade, Paper, Divider, Grid } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
 // Custom components
+import { PreviewItem } from '~/components';
 import { Input } from '~/components/Forms';
 import { styles } from './styles';
 
@@ -16,6 +18,8 @@ import { ApplicationState } from '~/store';
 
 function Form(props: any) {
   const { classes } = props;
+  const itemSelected = useSelector((state: ApplicationState) => state.tasks.selected);
+
   return (
     <Fade in timeout={700}>
       <Paper className={classes.paper}>
@@ -62,6 +66,8 @@ function Form(props: any) {
             <Grid item md={6}>
               <Field name="ClienteAt" component={Input} fullWidth label="Cliente" disabled />
             </Grid>
+
+            <PreviewItem anexos={itemSelected.Anexos} />
           </Grid>
         </form>
       </Paper>
