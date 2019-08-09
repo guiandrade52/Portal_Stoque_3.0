@@ -12,12 +12,36 @@ export enum TasksTypes {
  * Data types
  */
 
+export interface Rat {
+  Causa: string;
+  DataFinal: string;
+  DataInicio: string;
+  Defeito: string;
+  ExecutionId: number;
+  NumeroVisita: number;
+  Solucao: string;
+}
+
+export interface Cit {
+  ExecutionId: number;
+  DataInicio: string;
+  DataFinal: string;
+}
+
+export interface Solucao {
+  ActivitId: number;
+  DataFinal: string;
+  DataInicio: string;
+  ExecutionId: number;
+  SolucaoAplicada: string;
+}
+
 export interface Task {
   Anexos?: [];
   Bairro?: string;
   Cep?: string;
   Cidade?: string;
-  Cit?: [];
+  Cit?: Cit;
   Classificacao?: string;
   ClienteAt?: string;
   Complemento?: string;
@@ -34,7 +58,7 @@ export interface Task {
   Numero?: string;
   Origem?: string;
   Produto?: string;
-  Rat?: [];
+  Rats?: Rat[];
   Responsavel?: string;
   Serie?: string;
   Servico?: string;

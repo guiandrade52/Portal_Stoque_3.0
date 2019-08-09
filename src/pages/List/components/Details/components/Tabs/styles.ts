@@ -10,4 +10,7 @@ export const styles = (theme: Theme) =>
       textAlign: 'center',
       color: theme.palette.text.secondary,
     },
+    hidden: {
+      display: 'none',
+    },
   });

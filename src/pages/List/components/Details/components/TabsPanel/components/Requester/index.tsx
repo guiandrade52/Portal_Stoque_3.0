@@ -14,7 +14,7 @@ import { styles } from './styles';
 
 import { ApplicationState } from '~/store';
 
-function Form(props: any) {
+function Requester(props: any) {
   const { classes } = props;
   return (
     <Fade in timeout={700}>
@@ -50,6 +50,6 @@ export default withStyles(styles)(
     reduxForm({
       form: 'tabContato',
       enableReinitialize: true,
-    })(Form)
+    })(Requester)
   )
 );

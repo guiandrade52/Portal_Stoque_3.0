@@ -10,13 +10,13 @@ import { Fade, Paper, Divider, Grid } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
 // Custom components
-import { PreviewItem } from '~/components';
+import { Preview } from './components';
 import { Input } from '~/components/Forms';
 import { styles } from './styles';
 
 import { ApplicationState } from '~/store';
 
-function Form(props: any) {
+function Resume(props: any) {
   const { classes } = props;
   const itemSelected = useSelector((state: ApplicationState) => state.tasks.selected);
 
@@ -67,7 +67,7 @@ function Form(props: any) {
               <Field name="ClienteAt" component={Input} fullWidth label="Cliente" disabled />
             </Grid>
 
-            <PreviewItem onclick={() => console.log('cliquei')} anexos={itemSelected.Anexos} />
+            <Preview anexos={itemSelected.Anexos} />
           </Grid>
         </form>
       </Paper>
@@ -84,6 +84,6 @@ export default withStyles(styles)(
     reduxForm({
       form: 'tabResumo',
       enableReinitialize: true,
-    })(Form)
+    })(Resume)
   )
 );

@@ -14,7 +14,7 @@ import { styles } from './styles';
 
 import { ApplicationState } from '~/store';
 
-function Form(props: any) {
+function Classification(props: any) {
   const { classes } = props;
   return (
     <Fade in timeout={700}>
@@ -78,6 +78,6 @@ export default withStyles(styles)(
     reduxForm({
       form: 'tabClassification',
       enableReinitialize: true,
-    })(Form)
+    })(Classification)
   )
 );

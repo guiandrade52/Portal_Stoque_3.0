@@ -29,7 +29,6 @@ interface Anexo {
 
 interface OwnProps extends WithStyles<typeof styles> {
   anexos?: Anexo[];
-  onclick?: () => void;
 }
 
 function PreviewItem(props: OwnProps) {
@@ -43,9 +42,9 @@ function PreviewItem(props: OwnProps) {
     setLoading(true);
   }, [anexos]);
 
-  function getImage(chave: string, tipo: string) {
+  async function getImage(chave: string, tipo: string) {
     if (chave.length > 0) {
-      api.get(`/task/anexo?chave=${chave}&tipo=${tipo}`).then(resp => {
+      await api.get(`/task/anexo?chave=${chave}&tipo=${tipo}`).then(resp => {
         if (resp.status === 200) setLoading(false);
       });
     }

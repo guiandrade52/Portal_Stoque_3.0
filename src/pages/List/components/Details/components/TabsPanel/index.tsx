@@ -6,7 +6,7 @@ import { WithStyles, withStyles } from '@material-ui/core/styles';
 import { styles } from './styles';
 
 // Custom components
-import { Resume, Address, Classification, Requester } from './components';
+import { Resume, Address, Classification, Requester, RatCit } from './components';
 
 interface OwnProps extends WithStyles<typeof styles> {
   value: number;
@@ -21,6 +21,7 @@ function TabsPanel(props: OwnProps) {
         {Boolean(value === 1) && <Address />}
         {Boolean(value === 2) && <Classification />}
         {Boolean(value === 3) && <Requester />}
+        {Boolean(value === 4) && <RatCit />}
       </PerfectScrollbar>
     </div>
   );

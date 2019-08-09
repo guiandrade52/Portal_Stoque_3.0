@@ -63,15 +63,14 @@ function TaskItem(props: OwnProps) {
           </Typography>
           <Typography noWrap className={classes.data}>
             {task.DataCr}
-
             <span className={classes.rootIcons}>
-              {task.Rat && task.Rat.length > 0 && (
+              {task.Rats && task.Rats.length > 0 && (
                 <Tooltip title="Rat" placement="top">
                   <BeenhereIcon fontSize="inherit" className={classes.rat} />
                 </Tooltip>
               )}
 
-              {task.Cit && task.Cit.length > 0 && (
+              {task.Cit && (
                 <Tooltip title="Cit" placement="top">
                   <BeenhereIcon fontSize="inherit" className={classes.cit} />
                 </Tooltip>

@@ -15,7 +15,7 @@ import { styles } from './styles';
 
 import { ApplicationState } from '~/store';
 
-function Form(props: any) {
+function Address(props: any) {
   const { classes } = props;
   return (
     <Fade in timeout={700}>
@@ -63,6 +63,6 @@ export default withStyles(styles)(
     reduxForm({
       form: 'tabAddress',
       enableReinitialize: true,
-    })(Form)
+    })(Address)
   )
 );
