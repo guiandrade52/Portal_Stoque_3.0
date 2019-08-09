@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Material components
-import { Grid, Typography } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 
 // Material styles
 import { withStyles, WithStyles } from '@material-ui/core/styles';
