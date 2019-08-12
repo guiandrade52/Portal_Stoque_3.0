@@ -36,7 +36,7 @@ namespace PortalStoque.API.Models.Ocorrencias
         public string Produto { get; set; }
         public int idSituacao { get; set; }
         public Solucao Solucao { get; set; }
-        public IEnumerable<Rat> Rat { get; set; }
+        public IEnumerable<Rat> Rats { get; set; }
         public IEnumerable<Anexo> Anexos { get; set; }
         public Cit Cit { get; set; }
     }

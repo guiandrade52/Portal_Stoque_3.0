@@ -38,7 +38,7 @@ namespace PortalStoque.API.Controllers
 
             foreach (var item in tasks)
             {
-                item.Rat = _RatRepositorio.GetDataRat(item.ExecutionId);
+                item.Rats = _RatRepositorio.GetDataRat(item.ExecutionId);
                 item.Cit = _CitRepositorio.GetCit(item.ExecutionId);
                 item.Anexos = _AnexoRepositorio.GetAnexo(item.ExecutionId);
                 item.Solucao = _solucaoRepositorio.GetSolucaos(item.ExecutionId);

@@ -629,3 +629,51 @@ Log Entry : 17:58:19 segunda-feira, 27 de maio de 2019
   :
   :The conversion of a varchar data type to a datetime data type resulted in an out-of-range value.
 -------------------------------
+
+Log Entry : 13:59:53 sexta-feira, 9 de agosto de 2019
+  :
+  :
+-------------------------------
+
+Log Entry : 13:59:53 sexta-feira, 9 de agosto de 2019
+  :
+  :Erro ao interpretar resposta do servidor: System.Exception: Exceção do tipo 'System.Exception' foi acionada.
+   em PortalStoque.API.Services.SWServiceInvoker.checkResultStatus(XmlNode sr) na C:\PROJETOS\API\C#\PortalStoque.API\PortalStoque.API\Services\SWServiceInvoker.cs:linha 97
+   em PortalStoque.API.Services.SWServiceInvoker.callService(HttpWebRequest conn, String body, String serviceName) na C:\PROJETOS\API\C#\PortalStoque.API\PortalStoque.API\Services\SWServiceInvoker.cs:linha 221
+-------------------------------
+
+Log Entry : 14:15:39 sexta-feira, 9 de agosto de 2019
+  :
+  :
+-------------------------------
+
+Log Entry : 14:15:39 sexta-feira, 9 de agosto de 2019
+  :
+  :Erro ao interpretar resposta do servidor: System.Exception: Exceção do tipo 'System.Exception' foi acionada.
+   em PortalStoque.API.Services.SWServiceInvoker.checkResultStatus(XmlNode sr) na C:\PROJETOS\API\C#\PortalStoque.API\PortalStoque.API\Services\SWServiceInvoker.cs:linha 97
+   em PortalStoque.API.Services.SWServiceInvoker.callService(HttpWebRequest conn, String body, String serviceName) na C:\PROJETOS\API\C#\PortalStoque.API\PortalStoque.API\Services\SWServiceInvoker.cs:linha 221
+-------------------------------
+
+Log Entry : 14:26:53 sexta-feira, 9 de agosto de 2019
+  :
+  :
+-------------------------------
+
+Log Entry : 14:26:53 sexta-feira, 9 de agosto de 2019
+  :
+  :Erro ao interpretar resposta do servidor: System.Exception: Exceção do tipo 'System.Exception' foi acionada.
+   em PortalStoque.API.Services.SWServiceInvoker.checkResultStatus(XmlNode sr) na C:\PROJETOS\API\C#\PortalStoque.API\PortalStoque.API\Services\SWServiceInvoker.cs:linha 97
+   em PortalStoque.API.Services.SWServiceInvoker.callService(HttpWebRequest conn, String body, String serviceName) na C:\PROJETOS\API\C#\PortalStoque.API\PortalStoque.API\Services\SWServiceInvoker.cs:linha 221
+-------------------------------
+
+Log Entry : 14:42:21 sexta-feira, 9 de agosto de 2019
+  :
+  :
+-------------------------------
+
+Log Entry : 14:42:21 sexta-feira, 9 de agosto de 2019
+  :
+  :Erro ao interpretar resposta do servidor: System.Exception: Exceção do tipo 'System.Exception' foi acionada.
+   em PortalStoque.API.Services.SWServiceInvoker.checkResultStatus(XmlNode sr) na C:\PROJETOS\API\C#\PortalStoque.API\PortalStoque.API\Services\SWServiceInvoker.cs:linha 97
+   em PortalStoque.API.Services.SWServiceInvoker.callService(HttpWebRequest conn, String body, String serviceName) na C:\PROJETOS\API\C#\PortalStoque.API\PortalStoque.API\Services\SWServiceInvoker.cs:linha 221
+-------------------------------
