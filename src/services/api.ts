@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { toastr } from 'react-redux-toastr';
 
-export const HOST = 'http://localhost:64966';
-// export const HOST = 'http://devportal.stoque.com.br';
+// export const HOST = 'http://localhost:64966';
+export const HOST = 'http://devportal.stoque.com.br/aplicacao/';
 
 const api = axios.create({
   baseURL: HOST,

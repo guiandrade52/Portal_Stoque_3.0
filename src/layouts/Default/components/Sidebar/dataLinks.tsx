@@ -11,12 +11,12 @@ import {
 } from '@material-ui/icons';
 
 export const links = [
-  {
-    icon: <DashboardIcon color="primary" />,
-    title: 'Dashboard',
-    link: '/',
-    subLink: [],
-  },
+  // {
+  //   icon: <DashboardIcon color="primary" />,
+  //   title: 'Dashboard',
+  //   link: '/',
+  //   subLink: [],
+  // },
   {
     icon: <LibraryAddIcon color="primary" />,
     title: 'Novo',
@@ -36,14 +36,14 @@ export const links = [
   },
   {
     icon: <FormatListBulletedIcon color="primary" />,
-    title: 'Listar Tarefas',
+    title: 'Listar Ocorrências',
     link: '/list',
     subLink: [],
   },
-  {
-    icon: <SettingsIcon color="primary" />,
-    title: 'Configurador',
-    link: '/config',
-    subLink: [],
-  },
+  // {
+  //   icon: <SettingsIcon color="primary" />,
+  //   title: 'Configurador',
+  //   link: '/config',
+  //   subLink: [],
+  // },
 ];

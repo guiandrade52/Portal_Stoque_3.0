@@ -57,7 +57,7 @@ function List(props: WithStyles<typeof styles>) {
 
   return (
     <div>
-      <SubHeader title="Listar tarefas" Links={[]} />
+      <SubHeader title="Lista de Ocorrências" Links={[]} />
       {RenderTask()}
     </div>
   );

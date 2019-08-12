@@ -8,7 +8,7 @@ import { ApplicationState } from '~/store';
 
 import { signInRequest } from '~/store/modules/auth/actions';
 
-import logo from '~/assets/icons/logo.svg';
+// import logo from '~/assets/icons/logo.svg';
 
 const schema = Yup.object().shape({
   username: Yup.string().required('O usuário é obrigatório'),
@@ -25,14 +25,13 @@ export default function SignIn() {
 
   return (
     <>
-      <img src={logo} alt="GoBarber" />
-
+      <h1>Portal Stoque</h1>
       <Form schema={schema} onSubmit={handleSubmit}>
         <Input name="username" type="username" placeholder="Seu usuário" />
         <Input name="password" type="password" placeholder="Sua senha secreta" />
 
         <button type="submit">{loading ? 'Carregando...' : 'Acessar'}</button>
-        <Link to="/register">Criar conta gratuita</Link>
+        <Link to="/register">Cadastrar</Link>
       </Form>
     </>
   );
