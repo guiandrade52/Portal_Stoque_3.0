@@ -16,4 +16,8 @@ export const styles = (theme: Theme) =>
       height: 28,
       margin: 4,
     },
+    searchIcon: {
+      fontSize: 30,
+      margin: '8px 2px',
+    },
   });
