@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
+import { Button, Icon, Container, Header } from 'semantic-ui-react'
 
 import { ApplicationState } from '~/store';
 
@@ -25,14 +26,16 @@ export default function SignIn() {
 
   return (
     <>
-      <h1>Portal Stoque</h1>
+    <Container className="Principal" fluid>
+      <Header className="Lo">Portal Stoque</Header>
       <Form schema={schema} onSubmit={handleSubmit}>
-        <Input name="username" type="username" placeholder="Seu usuário" />
-        <Input name="password" type="password" placeholder="Sua senha secreta" />
-
-        <button type="submit">{loading ? 'Carregando...' : 'Acessar'}</button>
-        <Link to="/register">Cadastrar</Link>
+        <Input className="inputUser" name="username" type="username" placeholder="Usuário"/>
+        <Input name="password" type="password" placeholder="Senha" />
+        <Button type="submit">{loading ? 'Carregando...' : 'Acessar'}</Button>
+        <Link to="/register">Novo Cadastro</Link>
       </Form>
+      </Container>
     </>
   );
 }
+ 

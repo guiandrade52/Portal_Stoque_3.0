@@ -20,7 +20,7 @@ export default createGlobalStyle`
 
   html, body, #root {
     height: 100%;
-    background: #EEE
+    font: 14px 'Roboto', sans-serif !important;
   }
 
   body {
@@ -42,4 +42,5 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
+  
 `;
